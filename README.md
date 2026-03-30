@@ -1,74 +1,63 @@
-# License Plate Owner Lookup API
+# License Plate Lookup API (DPPA Compliant Vehicle Owner Data API)
 
-DPPA-compliant license plate to owner lookup API — built and fulfilled by a licensed California Private Investigator (CA PI License #27617).
+A developer-friendly API to perform license plate lookups and retrieve vehicle-related data for lawful and permissible use cases.
 
-## What It Does
-Send a license plate number and state, get back verified owner data. Results returned within 1–2 business days through a secure order tracking URL.
+This API is built and maintained by a licensed private investigator and is designed for developers, investigators, attorneys, and businesses that require access to vehicle information in a compliant and structured format.
 
-## Coverage
-36 US states — DPPA-compliant only
+---
 
-## DPPA Permissible Purposes
-- Purpose 1 — Government agency
-- Purpose 2 — Motor vehicle safety
-- Purpose 8 — Insurance
-- Purpose 9 — Licensed private investigator
+## 🚀 Live API Access
 
-## API Endpoint
-```
-GET https://license-plate-owner.com/api-endpoint/lookup.php?plate=ABC1234&state=CA&purpose=9
-```
+- RapidAPI: https://rapidapi.com/ljkc916/api/license-plate-owner-lookup  
+- Postman Collection: https://www.postman.com/licenseplatelookup-3057154  
+- Website: https://license-plate-owner.com/api/
 
-## Parameters
-| Parameter | Required | Description |
-|-----------|----------|-------------|
-| plate | Yes | License plate number |
-| state | Yes | Two-letter state code |
-| purpose | Yes | DPPA purpose code (1, 2, 8, or 9) |
+---
 
-## Sample Response
-```json
-{
-  "status": "success",
-  "order_url": "https://license-plate-owner.com/order/track/?id=XXXXXXXX"
-}
-```
+## 🔍 What This API Does
 
-## Quick Start
-- 📄 [Full API Documentation](https://license-plate-owner.com/api/)
-- ⚡ [Free Tier on RapidAPI](https://rapidapi.com/ljkc916/api/license-plate-owner-lookup)
-- 🧪 [Postman Collection](https://www.postman.com/licenseplatelookup-3057154)
+This API allows you to:
 
-## Code Examples
+- Lookup vehicle information by license plate  
+- Retrieve vehicle make, model, and year  
+- Access available registration-related data (where permitted)  
+- Support investigative and legal research workflows  
+- Integrate vehicle lookup functionality into apps and systems  
 
-**cURL**
+---
+
+## ⚖️ DPPA Compliance (Important)
+
+This API is designed to align with the Driver’s Privacy Protection Act (DPPA).
+
+Access to registered owner information is restricted and only available when a valid permissible purpose exists, such as:
+
+- Legal investigations  
+- Litigation and court-related matters  
+- Fraud or identity investigations  
+- Business verification  
+- Insurance or claims investigations  
+
+Users are responsible for ensuring compliance with all applicable laws before using this API.
+
+---
+
+## 🧠 Common Use Cases
+
+- Private investigators locating vehicle-related information  
+- Attorneys preparing cases or subpoenas  
+- Process servers verifying vehicle ownership details  
+- Developers building vehicle lookup tools  
+- OSINT researchers gathering vehicle intelligence  
+
+---
+
+## 💻 Example Request
+
+### cURL
+
 ```bash
-curl "https://license-plate-owner.com/api-endpoint/lookup.php?plate=ABC1234&state=CA&purpose=9"
-```
-
-**Python**
-```python
-import requests
-
-params = {"plate": "ABC1234", "state": "CA", "purpose": "9"}
-response = requests.get("https://license-plate-owner.com/api-endpoint/lookup.php", params=params)
-print(response.json())
-```
-
-**PHP**
-```php
-$url = "https://license-plate-owner.com/api-endpoint/lookup.php?plate=ABC1234&state=CA&purpose=9";
-$response = file_get_contents($url);
-$data = json_decode($response, true);
-```
-
-**JavaScript**
-```javascript
-const res = await fetch("https://license-plate-owner.com/api-endpoint/lookup.php?plate=ABC1234&state=CA&purpose=9");
-const data = await res.json();
-console.log(data);
-```
-
-## About
-Built by [Lance Casey & Associates](https://license-plate-owner.com/) — Sacramento, CA
-Licensed California Private Investigator — CA PI #27617
+curl --request GET \
+  --url "https://license-plate-owner.p.rapidapi.com/lookup?plate=ABC1234&state=CA" \
+  --header "X-RapidAPI-Key: YOUR_API_KEY" \
+  --header "X-RapidAPI-Host: license-plate-owner.p.rapidapi.com"
